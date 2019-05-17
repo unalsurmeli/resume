@@ -9,10 +9,14 @@ const HeaderContainer = styled.header`
   text-align: center; 
 `;
 
-const myUL = css`
+const MyUl = styled.ul`
   min-height: 48px;
   width: auto;
   text-align: center;
+  
+  ${props => props.name && css`
+    background-color: #95a5a6;
+  `}
 `;
 
 const MenuItem = styled.li`
@@ -56,7 +60,7 @@ const menus = [
 const Header = () => {
   return (
     <HeaderContainer>
-      <ul className={myUL}>
+      <MyUl name="1">
         {menus && menus.map((menu, index) => (
           <MenuItem key={'menu_' + index}>
             <Link href={menu.link}>
@@ -64,7 +68,7 @@ const Header = () => {
             </Link>
           </MenuItem>
         ))}
-      </ul>
+      </MyUl>
     </HeaderContainer>
   )
 };
