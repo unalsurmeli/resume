@@ -1,28 +1,32 @@
-import React, {Component} from 'react';
-import {Greetings} from "./components/Greetings";
+import React, { Component, Fragment } from 'react';
+
+import { Greetings } from "./components/Greetings";
 import Clock from "./components/Clock";
 import DailyText from "./components/DailyText";
 
+import Header from './container/Header';
+
 class App extends Component {
     state = {
-        backgroundImageUrl: 'https://source.unsplash.com/random/1600x900/?architecture,nature,water'
-        //backgroundImageUrl: 'https://images.unsplash.com/photo-1499002238440-d264edd596ec'
-        //backgroundImageUrl: 'https://source.unsplash.com/collection/2013126/1600x900'
+        backgroundImageUrl: 'https://picsum.photos/id/2/1600/900'
     };
 
     render() {
         const {backgroundImageUrl} = this.state;
 
         return (
-            <div style={{...styles.backStyle, backgroundImage: `url(${backgroundImageUrl})`}}>
-                <div style={styles.wrapperStyle}>
-                    <div style={styles.contentStyle}>
-                        <Greetings name={'Ünal'} surname={'Sürmeli'}/>
-                    </div>
-                    <DailyText name={'Ünal'} />
-                    <Clock />
-                </div>
-            </div>
+            <Fragment>
+              <Header />
+              <div style={{...styles.backStyle, backgroundImage: `url(${backgroundImageUrl})`}}>
+                  <div style={styles.wrapperStyle}>
+                      <div style={styles.contentStyle}>
+                          <Greetings name={'Ünal'} surname={'Sürmeli'}/>
+                      </div>
+                      <DailyText name={'Ünal'} />
+                      <Clock />
+                  </div>
+              </div>
+            </Fragment>
         );
     }
 }
