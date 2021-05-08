@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase-tools": "^6.7.1",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
